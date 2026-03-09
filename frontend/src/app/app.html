@@ -1,0 +1,34 @@
+<div class="main">
+
+  <div class="container">
+
+
+    <h1>To-do List</h1>
+
+
+    <div class="inputSection">
+
+      <input type="text" [(ngModel)]="task" placeholder="Enter the Task">
+
+
+
+      <button class="addTask" (click)="addTask()">Add Task</button>
+    </div>
+    <div class="tasks">
+
+      <h2>Tasks:</h2>
+    </div>
+
+    @for(task of taskList; track task.id; let i= $index){
+
+
+    <ul>
+      <!-- <li class="taskList">{{i+1.}}</li> -->
+      <li class="tasklist">{{task.task}}</li>
+      <li><button class="delete" (click)="deleteTask(task.id)">Delete</button>
+      </li>
+    </ul>
+
+    }
+  </div>
+</div>
